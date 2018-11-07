@@ -1,0 +1,24 @@
+server:
+  port: ${EUREKA_SERVER_PORT:1111}
+  
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'INFO'
+    org.springframework.web: 'INFO'
+    com.gys: 'DEBUG'
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+
+spring:
+  thymeleaf:
+    enabled: false     # Disable Thymeleaf 
